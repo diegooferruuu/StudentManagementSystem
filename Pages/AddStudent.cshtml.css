@@ -1,0 +1,41 @@
+/* Container to center the form */
+.add-student-form {
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f8f8f8;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Label styling */
+.add-student-form label {
+    display: block;
+    margin-bottom: 0.25rem;
+    font-weight: bold;
+}
+
+/* Inputs styling */
+.add-student-form input {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    border: 1px solid #aaa;
+    box-sizing: border-box;
+}
+
+/* Button styling */
+.add-student-form button {
+    padding: 0.5rem 1rem;
+    background-color: #004080;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.add-student-form button:hover {
+    background-color: #0066cc;
+}
