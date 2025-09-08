@@ -1,0 +1,27 @@
+@page
+@model StudentManagementSystem.Pages.AddStudent
+
+@{
+    ViewData["Title"] = "Add Student";
+}
+
+<h1>Add Student</h1>
+
+<form class="add-student-form">
+    <div>
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" />
+    </div>
+
+    <div>
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" />
+    </div>
+
+    <div>
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" />
+    </div>
+
+    <button type="submit">Save</button>
+</form>
