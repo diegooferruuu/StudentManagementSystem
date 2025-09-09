@@ -6,7 +6,7 @@ namespace StudentManagement.Services
     {
         public double CalculateAverage(Student student)
         {
-            var scores = student.GetScores();
+            var scores = student.Scores;
             if (scores == null || !scores.Any())
                 return 0.0;
 
@@ -15,7 +15,7 @@ namespace StudentManagement.Services
 
         public Score GetHighestScore(Student student)
         {
-            var scores = student.GetScores();
+            var scores = student.Scores;
             if (scores == null || !scores.Any())
                 return null;
 
