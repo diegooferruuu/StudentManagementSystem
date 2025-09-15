@@ -5,9 +5,9 @@ namespace StudentManagementSystem.Services.Reports
     public abstract class ReportGeneratorCreator
     {
         public abstract IReportGenerator createReportGenerator();
-        public  IReportGenerator generateReport(Student student)
+        public  string generateReport(Student student)
         {
-            IReportGenerator reportGenerator = createReportGenerator();
+            var reportGenerator = createReportGenerator();
             return reportGenerator.generateReport(student);
 
         }

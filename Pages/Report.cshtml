@@ -1,0 +1,22 @@
+@page "{id:int}"
+@model StudentManagementSystem.Pages.Report
+
+@{
+    ViewData["Title"] = "Student Details";
+}
+
+<h1>Student Details</h1>
+
+@if (Model.Student == null)
+{
+    <p>Student not found.</p>
+}
+else
+{
+    <h2>@Model.Student.firstName @Model.Student.lastName</h2>
+
+    <div>
+        @* Render the pre-built HTML report. Use Html.Raw to avoid escaping. *@
+        @Html.Raw(Model.ReportHtml)
+    </div>
+}

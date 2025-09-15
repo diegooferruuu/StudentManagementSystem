@@ -4,6 +4,6 @@ namespace StudentManagementSystem.Services.Reports
 {
     public interface IReportGenerator
     {
-        IReportGenerator generateReport(Student student);
+        string generateReport(Student student);
     }
 }
