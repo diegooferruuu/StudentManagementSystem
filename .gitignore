@@ -15,4 +15,3 @@ obj/
 project.lock.json
 
 .vs/
-./Migrations/
