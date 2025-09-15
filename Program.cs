@@ -1,8 +1,9 @@
 using Microsoft.EntityFrameworkCore;
-using StudentManagement.Services;
+using StudentManagementSystem.Services;
 using StudentManagementSystem.Context;
 using StudentManagementSystem.Repositories;
 using StudentManagementSystem.Services;
+using StudentManagementSystem.Services.Reports;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +14,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 builder.Services.AddScoped<IStudentRepository, DatabaseStudentRepository>();
 builder.Services.AddScoped<IScoreCalculator, SimpleScoreCalculator>();
 builder.Services.AddScoped<StudentService>();
+builder.Services.AddScoped<IReportGenerator, HtmlReportGenerator>();
 
 // Add services to the container.
 builder.Services.AddRazorPages();
