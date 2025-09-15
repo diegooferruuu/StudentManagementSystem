@@ -7,8 +7,8 @@ namespace StudentManagementSystem.Repositories
     public interface IStudentRepository
     {
         public void AddStudent(Student student);
-        public Student getStudent(string id);
-        public List<Student> getAllStudents();
+        public Student? GetStudent(int id);
+        public List<Student> GetAllStudents();
 
     }
 }

@@ -1,13 +1,18 @@
 using Microsoft.EntityFrameworkCore;
+using StudentManagement.Services;
 using StudentManagementSystem.Context;
 using StudentManagementSystem.Repositories;
+using StudentManagementSystem.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+//Dependency injectables
 builder.Services.AddScoped<IStudentRepository, DatabaseStudentRepository>();
+builder.Services.AddScoped<IScoreCalculator, SimpleScoreCalculator>();
+builder.Services.AddScoped<StudentService>();
 
 // Add services to the container.
 builder.Services.AddRazorPages();

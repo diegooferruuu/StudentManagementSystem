@@ -14,20 +14,35 @@
             <th>Student ID</th>
             <th>Name</th>
             <th>Date of Birth</th>
+            <th>Options</th>
         </tr>
         </thead>
         <tbody>
-        <!-- Placeholder rows since DB is not yet connected -->
-        <tr>
-            <td>1</td>
-            <td>Jane Doe</td>
-            <td>2002-05-10</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>John Smith</td>
-            <td>2003-11-22</td>
-        </tr>
+        @if (Model.Students.Count == 0)
+        {
+            <tr>
+                <td colspan="3">No students found.</td>
+            </tr>
+        }
+        else
+        {
+            foreach (var student in Model.Students)
+            {
+                <tr>
+                    <td>@student.StudentId</td>
+                    <td>@student.firstName</td>
+                    <td>@student.lastName</td>
+                    <td>
+                        <button>
+                            See Report
+                        </button>
+                        <button title="Export report to PDF">
+                            Export
+                        </button>
+                    </td>
+                </tr>
+            }
+        }
         </tbody>
     </table>
 </div>

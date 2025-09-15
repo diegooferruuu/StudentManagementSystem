@@ -1,9 +1,13 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using StudentManagementSystem.Models;
+using StudentManagementSystem.Services;
 
 namespace StudentManagementSystem.Pages;
 
-public class AddStudent : PageModel
+public class AddStudent(StudentService studentService) : PageModel
 {
+    private readonly StudentService _studentService = studentService;
+
     public void OnGet()
     {
         
@@ -11,6 +15,13 @@ public class AddStudent : PageModel
 
     public void OnPost()
     {
-        
+        String lastName = Request.Form["lastName"];
+        String firstName = Request.Form["firstName"];
+
+        Student student = new Student();
+        student.firstName = firstName;
+        student.lastName = lastName;
+        _studentService.AddStudent(student);
+
     }
 }

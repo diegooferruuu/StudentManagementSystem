@@ -19,17 +19,14 @@ public class DatabaseStudentRepository : IStudentRepository
         _context.SaveChanges();
     }
 
-    public Student? getStudent(string id)
+    public Student? GetStudent(int id)
     {
-        if (!int.TryParse(id, out var studentId))
-            return null;
-
         return _context.Students
             .Include(s => s.Scores)
-            .FirstOrDefault(s => s.StudentId == studentId);
+            .FirstOrDefault(s => s.StudentId == id);
     }
 
-    public List<Student> getAllStudents()
+    public List<Student> GetAllStudents()
     {
         return _context.Students
             .Include(s => s.Scores)
