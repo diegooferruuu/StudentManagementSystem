@@ -1,4 +1,4 @@
-using StudentManagement.Services;
+using StudentManagementSystem.Services;
 using StudentManagementSystem.Models;
 using StudentManagementSystem.Repositories;
 

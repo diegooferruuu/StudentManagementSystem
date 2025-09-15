@@ -1,6 +1,6 @@
 using StudentManagementSystem.Models;
 
-namespace StudentManagement.Services
+namespace StudentManagementSystem.Services
 {
     public interface IScoreCalculator
     {
