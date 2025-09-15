@@ -1,6 +1,7 @@
+using StudentManagement.Services;
 using StudentManagementSystem.Models;
 
-namespace StudentManagement.Services
+namespace StudentManagementSystem.Services
 {
     public class SimpleScoreCalculator : IScoreCalculator
     {
