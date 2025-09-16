@@ -17,6 +17,7 @@ builder.Services.AddScoped<IStudentRepository, DatabaseStudentRepository>();
 builder.Services.AddScoped<IScoreCalculator, SimpleScoreCalculator>();
 builder.Services.AddScoped<StudentService>();
 builder.Services.AddScoped<HtmlReportGeneratorCreator>();
+builder.Services.AddScoped<IStudentValidation, StudentValidation>();
 builder.Services.AddScoped<PdfReportGeneratorCreator>();
 builder.Services.AddScoped<IReportGenerator, PdfReportGenerator>(sp =>
 {

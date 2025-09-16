@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
@@ -6,7 +7,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace StudentManagementSystem.Migrations
 {
     /// <inheritdoc />
-    public partial class Initialmigration : Migration
+    public partial class Complex_Student_Model : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -15,9 +16,12 @@ namespace StudentManagementSystem.Migrations
                 name: "Students",
                 columns: table => new
                 {
-                    StudentId = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    Name = table.Column<string>(type: "text", nullable: false)
+                    StudentId = table.Column<string>(type: "character varying(8)", maxLength: 8, nullable: false),
+                    FirstName = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
+                    LastName = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
+                    DateOfBirth = table.Column<DateTime>(type: "timestamp", nullable: false),
+                    Email = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
+                    Phone = table.Column<string>(type: "character varying(8)", maxLength: 8, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -33,7 +37,7 @@ namespace StudentManagementSystem.Migrations
                     Subject = table.Column<string>(type: "text", nullable: false),
                     Value = table.Column<double>(type: "double precision", nullable: false),
                     Type = table.Column<string>(type: "text", nullable: false),
-                    StudentId = table.Column<int>(type: "integer", nullable: false)
+                    StudentId = table.Column<string>(type: "character varying(8)", nullable: false)
                 },
                 constraints: table =>
                 {

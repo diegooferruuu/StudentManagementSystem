@@ -9,6 +9,15 @@ public class AppDbContext: DbContext
     {
     }
     
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<Student>()
+            .Property(s => s.StudentId)
+            .ValueGeneratedNever();
+        modelBuilder.Entity<Student>()
+            .Property(s => s.DateOfBirth)
+            .HasColumnType("timestamp");
+    }
     public DbSet<Student> Students { get; set; }
     public DbSet<Score> Scores { get; set; }
 }

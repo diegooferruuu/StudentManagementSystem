@@ -27,7 +27,7 @@ public class HtmlReportGenerator : IReportGenerator
 
         // Header
         sb.AppendLine($"<div class=\"student-report\">");
-        sb.AppendLine($"  <h2>Report for {System.Net.WebUtility.HtmlEncode(student.firstName + student.lastName)}</h2>");
+        sb.AppendLine($"  <h2>Report for {System.Net.WebUtility.HtmlEncode(student.FirstName + ' ' + student.LastName)}</h2>");
         sb.AppendLine($"  <p><strong>ID:</strong> {System.Net.WebUtility.HtmlEncode(student.StudentId.ToString())}</p>");
 
         // Scores table
