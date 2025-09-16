@@ -37,7 +37,9 @@
                             <a asp-page="/Report" asp-route-id="@student.StudentId">See Report</a>
                         </button>
                         <button title="Export report to PDF">
-                            Export
+                            <a asp-page="./SeeStudents" asp-route-handler="ExportPdf" asp-route-id="@student.StudentId" target="_blank">
+                                Export
+                            </a>
                         </button>
                     </td>
                 </tr>
