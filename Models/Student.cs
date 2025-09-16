@@ -1,14 +1,16 @@
 using System.ComponentModel.DataAnnotations;
+using System.Runtime.InteropServices.JavaScript;
+
 namespace StudentManagementSystem.Models;
 
 public class Student
 {
     
-    [Key] 
+    [Key]
     [Required(ErrorMessage = "Student ID is required")]
     [StringLength(8, MinimumLength = 6, ErrorMessage = "ID must be 6 to 8 characters long")]
-    [RegularExpression(@"^[0-9]", ErrorMessage = "Numbers only")]
-    public string StudentId { get; set; } = string.Empty; // Manual input (not auto-generated)
+    [RegularExpression(@"^[0-9]{6,8}$", ErrorMessage = "Numbers only (6–8 digits)")]
+    public string StudentId { get; set; } = string.Empty; 
 
     [Required(ErrorMessage = "First name is required")]
     [StringLength(50, ErrorMessage = "First name can't be longer than 50 characters")]
@@ -20,7 +22,7 @@ public class Student
 
     [DataType(DataType.Date)]
     [Required(ErrorMessage = "Date of birth is required")]
-    public DateTime DateOfBirth { get; set; }
+    public DateTime DateOfBirth { get; set; } = DateTime.Now;
 
     [Required(ErrorMessage = "Email is required")]
     [EmailAddress(ErrorMessage = "Invalid email format")]
