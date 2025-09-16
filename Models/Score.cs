@@ -7,6 +7,6 @@ public class Score
     public double Value { get; set; }
     public string Type { get; set; } = string.Empty;
 
-    public int StudentId { get; set; }
+    public String StudentId { get; set; } = string.Empty;
     public Student Student { get; set; } = null!;
 }

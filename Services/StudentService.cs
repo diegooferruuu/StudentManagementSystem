@@ -14,7 +14,7 @@ public class StudentService
         _studentRepository = studentRepository;
         _calculator = calculator;
     }
-    public Student? GetStudent(int id)
+    public Student? GetStudent(string id)
     {
         return _studentRepository.GetStudent(id);
     }
