@@ -3,10 +3,10 @@ using StudentManagementSystem.Services.Reports;
 
 namespace StudentManagementSystem.Services.Reports
 {
-    public class PdfReportGeneratorGreator : ReportGeneratorCreator
+    public class PdfReportGeneratorCreator : ReportGeneratorCreator
     {
         private readonly IScoreCalculator _calculator;
-        public PdfReportGeneratorGreator(IScoreCalculator calculator)
+        public PdfReportGeneratorCreator(IScoreCalculator calculator)
         {
             _calculator = calculator;
         }
