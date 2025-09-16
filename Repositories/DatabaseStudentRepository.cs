@@ -19,7 +19,7 @@ public class DatabaseStudentRepository : IStudentRepository
         _context.SaveChanges();
     }
 
-    public Student? GetStudent(int id)
+    public Student? GetStudent(string id)
     {
         return _context.Students
             .Include(s => s.Scores)
