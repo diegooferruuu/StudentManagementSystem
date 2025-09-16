@@ -28,7 +28,7 @@ public class SeeStudents : PageModel
 
     }
     
-    public IActionResult OnGetExportPdf(int id)
+    public IActionResult OnGetExportPdf(string id)
         {
             var student = _studentService.GetStudent(id);
             if (student == null)
@@ -38,7 +38,7 @@ public class SeeStudents : PageModel
 
             if (report.Body is byte[] pdfBytes)
             {
-                return File(pdfBytes, report.MimeType, $"Report_{student.firstName}_{student.lastName}.pdf");
+                return File(pdfBytes, report.MimeType, $"Report_{student.FirstName}_{student.LastName}.pdf");
             }
             else
             {

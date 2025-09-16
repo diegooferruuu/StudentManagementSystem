@@ -51,7 +51,7 @@ namespace StudentManagementSystem.Services.Reports
             var section = document.AddSection();
 
             // Header
-            var header = section.AddParagraph($"Report for {student.firstName} {student.lastName}");
+            var header = section.AddParagraph($"Report for {student.FirstName} {student.LastName}");
             header.Format.Font.Size = 14;
             header.Format.Font.Bold = true;
 
