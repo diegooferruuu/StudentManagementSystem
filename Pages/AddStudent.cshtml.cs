@@ -4,10 +4,14 @@ using StudentManagementSystem.Services;
 
 namespace StudentManagementSystem.Pages;
 
-public class AddStudent(StudentService studentService) : PageModel
+public class AddStudent: PageModel
 {
-    private readonly StudentService _studentService = studentService;
+    private readonly StudentService _studentService;
 
+    public AddStudent(StudentService studentService)
+    {
+        _studentService = studentService;
+    }
     public void OnGet()
     {
         

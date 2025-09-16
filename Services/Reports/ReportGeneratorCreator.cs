@@ -9,7 +9,6 @@ namespace StudentManagementSystem.Services.Reports
         {
             var reportGenerator = createReportGenerator();
             return reportGenerator.generateReport(student);
-
         }
 
     }
