@@ -23,8 +23,8 @@ public class AddStudent: PageModel
         String firstName = Request.Form["firstName"];
 
         Student student = new Student();
-        student.firstName = firstName;
-        student.lastName = lastName;
+        student.FirstName = firstName;
+        student.LastName = lastName;
         _studentService.AddStudent(student);
 
     }

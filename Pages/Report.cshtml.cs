@@ -19,7 +19,7 @@ public class Report : PageModel
         _reportGeneratorCreator = reportGeneratorCreator;
     }
 
-    public void OnGet(int id)
+    public void OnGet(string id)
     {
         Student = _studentService.GetStudent(id);
         if (Student != null)
