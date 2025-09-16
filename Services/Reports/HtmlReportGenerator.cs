@@ -14,9 +14,14 @@ public class HtmlReportGenerator : IReportGenerator
         _calculator = calculator;
     }
 
-    public string generateReport(Student student)
+    public Report generateReport(Student student)
     {
-        if (student == null) return "<p>No student provided.</p>";
+        Report report = new Report();
+        if (student == null)
+        {
+            report.Body = "<p>No student provided.</p>";
+            return report;
+        }
 
         var sb = new StringBuilder();
 
@@ -70,6 +75,9 @@ public class HtmlReportGenerator : IReportGenerator
         }
 
         sb.AppendLine("</div>"); // container
-        return sb.ToString();
+
+        report.Body = sb.ToString();
+        report.MimeType = "html";
+        return report;
     }
 }

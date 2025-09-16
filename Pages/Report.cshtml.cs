@@ -10,7 +10,7 @@ public class Report : PageModel
     private readonly StudentService _studentService;
     private readonly ReportGeneratorCreator _reportGeneratorCreator;
 
-    public string? ReportHtml { get; private set; }
+    public Object? ReportHtml { get; private set; }
     public Student? Student { get; private set; }
 
     public Report(StudentService studentService, HtmlReportGeneratorCreator reportGeneratorCreator)
@@ -24,7 +24,7 @@ public class Report : PageModel
         Student = _studentService.GetStudent(id);
         if (Student != null)
         {
-            ReportHtml = _reportGeneratorCreator.generateReport(Student);
+            ReportHtml = _reportGeneratorCreator.generateReport(Student).Body;
         }
     }
 }
