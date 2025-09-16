@@ -16,6 +16,7 @@ builder.Services.AddScoped<IStudentRepository, DatabaseStudentRepository>();
 builder.Services.AddScoped<IScoreCalculator, SimpleScoreCalculator>();
 builder.Services.AddScoped<StudentService>();
 builder.Services.AddScoped<HtmlReportGeneratorCreator>();
+builder.Services.AddScoped<IStudentValidation, StudentValidation>();
 
 // Add services to the container.
 builder.Services.AddRazorPages();
