@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using QuestPDF.Infrastructure;
 using StudentManagementSystem.Services;
 using StudentManagementSystem.Context;
 using StudentManagementSystem.Repositories;
@@ -14,7 +15,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 builder.Services.AddScoped<IStudentRepository, DatabaseStudentRepository>();
 builder.Services.AddScoped<IScoreCalculator, SimpleScoreCalculator>();
 builder.Services.AddScoped<StudentService>();
-builder.Services.AddScoped<IReportGenerator, HtmlReportGenerator>();
+builder.Services.AddScoped<HtmlReportGeneratorCreator>();
 
 // Add services to the container.
 builder.Services.AddRazorPages();

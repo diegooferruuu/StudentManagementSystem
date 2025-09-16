@@ -8,15 +8,15 @@ namespace StudentManagementSystem.Pages;
 public class Report : PageModel
 {
     private readonly IStudentRepository _repo;
-    private readonly IReportGenerator _reportGenerator;
+    private readonly ReportGeneratorCreator _reportGeneratorCreator;
 
     public string? ReportHtml { get; private set; }
     public Student? Student { get; private set; }
 
-    public Report(IStudentRepository repo, IReportGenerator reportGenerator)
+    public Report(IStudentRepository repo, HtmlReportGeneratorCreator reportGeneratorCreator)
     {
         _repo = repo;
-        _reportGenerator = reportGenerator;
+        _reportGeneratorCreator = reportGeneratorCreator;
     }
 
     public void OnGet(int id)
@@ -24,7 +24,7 @@ public class Report : PageModel
         Student = _repo.GetStudent(id);
         if (Student != null)
         {
-            ReportHtml = _reportGenerator.generateReport(Student);
+            ReportHtml = _reportGeneratorCreator.generateReport(Student);
         }
     }
 }
