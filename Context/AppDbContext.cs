@@ -14,6 +14,9 @@ public class AppDbContext: DbContext
         modelBuilder.Entity<Student>()
             .Property(s => s.StudentId)
             .ValueGeneratedNever();
+        modelBuilder.Entity<Student>()
+            .Property(s => s.DateOfBirth)
+            .HasColumnType("timestamp");
     }
     public DbSet<Student> Students { get; set; }
     public DbSet<Score> Scores { get; set; }
